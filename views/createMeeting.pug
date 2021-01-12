@@ -1,0 +1,47 @@
+extends base
+
+//- mixin navItem(link, text, icon, active)
+//-     li(class=`${active? 'side-nav--active' : ''}`)
+//-         a(href=`${link}`)
+//-             svg
+//-                 use(xlink:href=`/img/icons.svg#icon-${icon}`)
+//-             | #{text}
+
+mixin navItem(link, text, active)
+    li(class=`${active? 'side-nav--active' : ''}`)
+        a(href=`${link}`)
+            | #{text}
+
+block content
+    main.main
+        .user-view
+            nav.user-view__menu
+                ul.side-nav
+                    +navItem('/me/meetings', 'My Meetings')
+
+                - if(user.role === 'employee') 
+                    .admin-nav
+                        h5.admin-nav__heading Employee
+                        ul.side-nav
+                            +navItem('/createMeeting', 'Create New Meeting', true)
+
+            .user-view__content
+                .user-view__form-container
+                    h2.heading-secondary.ma-bt-md Create new meeting
+
+                    //- With API
+                    form.form.form-create-meeting
+                        .form__group
+                            label.form__label(for='info') Info
+                            input#info.form__input(type='text', placeholder='Example: Serdecznie zapraszam na...', required)
+                        .form__group
+                            label.form__label(for='place') Place
+                            input#place.form__input(type='text', placeholder='Example: Budynek 2, pokój 103', required)
+                        .form__group
+                            label.form__label(for='date') Date
+                            input#date.form__input(type='text', placeholder='Example: 02/03/2021, 13:00', required)
+                        .form__group
+                            label.form__label(for='limit') Limit
+                            input#limit.form__input(type='number', placeholder='Example: 6', min=1, max=20, required)
+                        .form__group.right
+                            button.btn.btn--small.btn--green.btn--create-meeting Create
