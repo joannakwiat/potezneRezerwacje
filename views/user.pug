@@ -7,8 +7,8 @@ block content
                 .card.signingMeetingCard
                     .card__details
                         h4.card__sub-heading= `Info: ${meeting.info}`
-                        h4.card__sub-heading= `Place: ${meeting.place}`
-                        h4.card__sub-heading= `Limit: ${meeting.limit}`
-                        h4.card__sub-heading= `Date: ${meeting.date}`
+                        h4.card__sub-heading= `Gdzie: ${meeting.place}`
+                        h4.card__sub-heading= `Kiedy: ${meeting.date}`
+                        h4.card__sub-heading= `Limit osób: ${meeting.limit}`
                     .card__footer
-                        button.signForMeetingBtn(value=`${meeting.id}`) Sign for this meeting
+                        button.signForMeetingBtn(value=`${meeting.id}`) ZAPISZ SIĘ NA TO SPOTKANIE
