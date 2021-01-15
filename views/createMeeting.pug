@@ -15,15 +15,6 @@ mixin navItem(link, text, active)
 block content
     main.main
         .user-view
-            nav.user-view__menu
-                ul.side-nav
-                    +navItem('/me/meetings', 'My Meetings')
-
-                - if(user.role === 'employee') 
-                    .admin-nav
-                        h5.admin-nav__heading Employee
-                        ul.side-nav
-                            +navItem('/createMeeting', 'Create New Meeting', true)
 
             .user-view__content
                 .user-view__form-container

@@ -214,10 +214,10 @@ button{
     linear,
     left top,
     right top,
-    from(#7dd56f),
-    to(#28b487)
+    from(#EE2E2A),
+    to(#EE2E2A)
   );
-  background-image: linear-gradient(to right, #7dd56f, #28b487);
+  background-image: linear-gradient(to right, #EE2E2A, #EE2E2A);
   -webkit-background-clip: text;
   color: transparent;
   letter-spacing: 0.1rem;
@@ -337,6 +337,7 @@ button{
 .btn--small {
   padding: 1.25rem 3rem !important;
   font-size: 1.4rem !important;
+  margin-bottom: 50px;
 }
 
 .btn-small,
@@ -1320,6 +1321,7 @@ button{
   justify-self: end;
   -ms-flex-item-align: center;
   align-self: center;
+  margin-bottom: 0;
 }
 
 .error {
@@ -1402,8 +1404,8 @@ button{
 .form__label {
   display: block;
   font-size: 1.6rem;
-  font-weight: 700;
   margin-bottom: 0.75rem;
+  font-family: Averta-Regular;
 }
 
 .form__photo-upload {
